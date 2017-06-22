@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Array exercises</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            const inventors = [
+                {
+                    first: "albert",
+                    last: "einstein",
+                    start: 1900,
+                    end: 1950,
+                },
+                {
+                    first: "nicola",
+                    last: "tesla",
+                    start: 1920,
+                    end: 1982
+                },
+                {
+                    first: "Garic",
+                    last: "Griffindor",
+                    start: 1910,
+                    end: 1999
+                }
+            ]
+            const people = [ 'Beck', 'Glenn', 'Becker', 'Carl' ]
+
+            // Array.prototype.filter()
+            // Filter those who started in the year 1900
+
+            const nineteen = inventors.filter(inventor => (inventor.start === 1900));
+            console.log(nineteen);
+
+            // Array.prototype.map()
+            // Sort by start year
+
+            const ordered = inventors.sort(function(a, b){
+                const lastOne = a.start;
+                const nextOne = b.start;
+                
+                return (a.start > nextOne) ? 1 : -1;
+            });
+
+            console.log(ordered);
+
+        </script>
+    </body>
+</html>
